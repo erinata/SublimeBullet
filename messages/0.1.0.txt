@@ -1,0 +1,7 @@
+SublimeMarkdown 0.2.0
+
+This is the first version released.
+
+Features:
+	- Automatically added * - > in markdown files where appropiate
+	- Build markdown file and view it in browser (Ctrl+B)
