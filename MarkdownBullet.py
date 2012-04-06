@@ -50,7 +50,7 @@ class MarkdownBullet(sublime_plugin.EventListener):
           current_line_region = view.line(loc.begin())
           current_line = view.substr(current_line_region)
           if current_line != "":
-            match_pattern = re.search("^( *|\t*)(\*|\-|\>|[0-9]+\.)(.*)$",current_line)
+            match_pattern = re.search("^( *|\t*)(\*|\-|\>|\+|[0-9]+\.)(.*)$",current_line)
             if match_pattern != None:
               if match_pattern.group(3) == "":
                 if MarkdownBullet.last_pos >= loc.begin():
@@ -79,10 +79,10 @@ class MarkdownBullet(sublime_plugin.EventListener):
         elif (row - MarkdownBullet.last_line == 1):
           previous_line = view.substr(view.line(MarkdownBullet.last_pos))
           if row != 0 and previous_line != "":
-            match_pattern = re.search("^( *|\t*)(\*|\-|\>|[0-9]+\.)(.*)",previous_line)
+            match_pattern = re.search("^( *|\t*)(\*|\-|\>|\+|[0-9]+\.)(.*)",previous_line)
             if match_pattern != None:
               if match_pattern.group(3) == " " or match_pattern.group(3) == "":
-                reg_remove = view.find("(\*|\-|\>|[0-9]+\.)(.*)",point_last_row-1)
+                reg_remove = view.find("(\*|\-|\>|\+|[0-9]+\.)(.*)",point_last_row-1)
                 edit = view.begin_edit()
                 view.erase(edit,reg_remove)     
                 view.end_edit(edit)                    
@@ -93,6 +93,8 @@ class MarkdownBullet(sublime_plugin.EventListener):
                   insertion = "- "
                 elif match_pattern.group(2) == ">":
                   insertion = "> "
+                elif match_pattern.group(2) == "+":
+                  insertion = "+ "
                 else:
                   match_number = re.search("[0-9]+",match_pattern.group(2))
                   if match_number != None:
