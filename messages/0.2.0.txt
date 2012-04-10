@@ -5,3 +5,4 @@ This is the first version released.
 Features:
 	- Automatically added * - > in markdown files where appropiate
 	- Build markdown file and view it in browser (Ctrl+B)
+  - Updated Readme to show the availability via package control

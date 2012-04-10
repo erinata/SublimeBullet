@@ -6,7 +6,7 @@ import re
 # TODO: Backspace on a indented empty bullet will unindent it
 # TODO: Backspace on a unindented empty bullet will delete it
 # TODO: Better multi line pasting behaviour (esp the bug that if you paste a 2 lines content, a * will be added to the end of the pasting )
-#       Just check whether the line is a empty line before inserting        
+#       Just check whether the line is a empty line before inserting
   
 class MarkdownBullet(sublime_plugin.EventListener):
   Modifying = False
@@ -109,10 +109,3 @@ class MarkdownBullet(sublime_plugin.EventListener):
       
     MarkdownBullet.update_row(self, view)
     MarkdownBullet.Modifying = False
-
-
-
-
-  
-
- 

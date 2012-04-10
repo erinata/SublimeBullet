@@ -1,12 +1,19 @@
-# SublimeBullet (version 0.1.1)
+# SublimeBullet (version 0.2.0)
 
 This is a Sublime Text plugin for markdown style Bullet points and Number lists. It automatically add * , +and - for unordered lists, > for blockquotes, and numbered items for number lists.
 
 ## Installation
 
-1. Download the package from https://github.com/downloads/erinata/SublimeBullet/SublimeBullet-0.1.0.zip
-2. Extract the folder SublimeBullet
-3. Copy the SublimeBullet folder to the package folder of SublimeText 2
+Install using Package Control (Recommanded)
+
+1. I guess most Sublime Text 2 users are using Sublime Package Control. If not, pleast install in from here <http://wbond.net/sublime_packages/package_control>
+2. Go to Preference > Package Control, and Choose "Install Package"
+3. Choose the package named "Bullet" to install it
+
+Install manually
+
+1. Download the repo
+2. Copy everything in the repo to a folder named "MarkdownBuild" under the package folder of SublimeText 2 (create it if it doesn't exist)
 
 ## Usage
 
