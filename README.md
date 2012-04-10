@@ -13,7 +13,7 @@ Install using Package Control (Recommanded)
 Install manually
 
 1. Download the repo
-2. Copy everything in the repo to a folder named "MarkdownBuild" under the package folder of SublimeText 2 (create it if it doesn't exist)
+2. Copy everything in the repo to a folder named "Bullet" under the package folder of SublimeText 2 (create it if it doesn't exist)
 
 ## Usage
 
