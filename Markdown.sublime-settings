@@ -1,8 +1,0 @@
-{
-  "markdown_selectors" : ["text.html.markdown"]
-
-  // You can customize which kind of files are viewed as markdown.
-  // For example if you would like to have the automatic bullet points behaviour in plain text files,
-  //
-	// "markdown_selectors" : ["text.html.markdown", "text.plain"]
-}

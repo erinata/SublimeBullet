@@ -1,0 +1,5 @@
+SublimeMarkdown 0.3.0
+
+Changelog
+  - a major rewrite on the mechanism of indent and unindent.
+  - use tab and shift tab to indent and unindent

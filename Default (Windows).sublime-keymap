@@ -1,0 +1,17 @@
+[
+  //// TODO: use settings to refine or customize regex
+	//{ 
+  //  "keys": ["tab"], "command": "bullet_indent", "context":
+  //  [
+  //    { "key": "preceding_text", "operator": "regex_match", "operand": "^( *|\\t*)(\\*|\\-|\\>|\\+|[0-9]+\\.)(.*)", "match_all": true },
+  //    { "key": "auto_complete_visible", "operator": "equal", "operand": false},
+  //    { "key": "last_command", "operator": "not_equal", "operand": "insert_best_completion" }
+  //  ]
+  //},
+  //{ 
+  //  "keys": ["shift+tab"], "command": "bullet_unindent", "context":
+  //  [
+  //    { "key": "preceding_text", "operator": "regex_match", "operand": "^( +|\\t+)(\\*|\\-|\\>|\\+|[0-9]+\\.)(.*)", "match_all": true }
+  //  ]
+  //}
+]
