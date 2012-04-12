@@ -1,14 +1,18 @@
 [
-  //{ 
-  //  "keys": ["tab"], "command": "indent", "context":
-  //  [
-  //    { "key": "preceding_text", "operator": "regex_match", "operand": "^( *|\\t*)(\\*|\\-|\\>|\\+|[0-9]+\\.)(.*)", "match_all": true }
-  //  ]
-  //},
-  //{ 
-  //  "keys": ["shift+tab"], "command": "unindent", "context":
-  //  [
-  //    { "key": "preceding_text", "operator": "regex_match", "operand": "^( +|\\t+)(\\*|\\-|\\>|\\+|[0-9]+\\.)(.*)", "match_all": true }
-  //  ]
-  //}
+  { 
+    "keys": ["tab"], "command": "indent", "context":
+    [
+      { "key": "preceding_text", "operator": "regex_match", "operand": "^( *|\\t*)(\\*|\\-|\\>|\\+|[0-9]+\\.)(.*)", "match_all": true },
+      { "key": "auto_complete_visible", "operator": "equal", "operand": false},
+      { "key": "last_command", "operator": "not_equal", "operand": "insert_best_completion" },
+      { "key": "selector", "operator": "equal", "operand": "text.html.markdown" }
+    ]
+  },
+  { 
+    "keys": ["shift+tab"], "command": "unindent", "context":
+    [
+      { "key": "preceding_text", "operator": "regex_match", "operand": "^( +|\\t+)(\\*|\\-|\\>|\\+|[0-9]+\\.)(.*)", "match_all": true },
+      { "key": "selector", "operator": "equal", "operand": "text.html.markdown" }
+    ]
+  }
 ]

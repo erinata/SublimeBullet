@@ -8,14 +8,6 @@ import re
 # TODO: Better multi line pasting behaviour (esp the bug that if you paste a 2 lines content, a * will be added to the end of the pasting )
 #       Just check whether the line is a empty line before inserting
 
-class BulletIndent(sublime_plugin.TextCommand):
-  def run(self, edit):
-    self.view.window().run_command("indent")
-
-class BulletUnindent(sublime_plugin.TextCommand):
-  def run(self, edit):
-    self.view.window().run_command("unindent")
-
 class Bullet(sublime_plugin.EventListener):
   Modifying = False
   is_markdown = False
