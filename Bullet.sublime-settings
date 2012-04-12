@@ -1,8 +1,3 @@
 {
-  "markdown_bullet_selectors" : ["text.html.markdown"]
-
-  // You can customize which kind of files are using bullet
-  // For example if you would like to have the automatic bullet points behaviour in plain text files,
-  //
-	// "markdown_bullet_selectors" : ["text.html.markdown", "text.plain"]
+  
 }

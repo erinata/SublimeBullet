@@ -3,3 +3,5 @@ SublimeMarkdown 0.3.0
 Changelog
   - a major rewrite on the mechanism of indent and unindent.
   - use tab and shift tab to indent and unindent
+  - The settings are disabled for now. This plugin will only work in markdown files
+

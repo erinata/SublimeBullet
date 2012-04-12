@@ -13,15 +13,18 @@ class Bullet(sublime_plugin.EventListener):
   is_markdown = False
   last_line = 0
   last_pos = 0
-  selectors = []
+  #selectors = []
+  selector_array = []
 
   def __init__(self):
-    s = sublime.load_settings("Bullet.sublime-settings")
-    Bullet.selectors = s.get("markdown_bullet_selectors", [])
+    #s = sublime.load_settings("Bullet.sublime-settings")
+    #selectors = s.get("markdown_bullet_selectors", "")
+    #Bullet.selector_array = selectors.split("|")
+    Bullet.selector_array = ["text.html.markdown"]
 
   def on_activated(self, view):
-    for x in range(len(Bullet.selectors)):
-      if (view.score_selector(0,Bullet.selectors[x]) > 0):
+    for x in range(len(Bullet.selector_array)):
+      if (view.score_selector(0,Bullet.selector_array[x]) > 0):
         Bullet.is_markdown = True
         Bullet.update_row(self, view)
         return
