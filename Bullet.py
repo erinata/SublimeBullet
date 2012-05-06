@@ -70,9 +70,9 @@ class Bullet(sublime_plugin.EventListener):
         if (row - Bullet.last_line == 1):
           previous_line = view.substr(view.line(Bullet.last_pos))
           if row != 0 and previous_line != "":
-            match_pattern = re.search("^( *|\t*)(\*|\-|\>|\+|[0-9]+\.)(.*)",previous_line)
+            match_pattern = re.search("^( *|\t*)(\*|\-|\>|\+|[0-9]+(\.))(.*)",previous_line)
             if match_pattern != None:
-              if match_pattern.group(3) == " " or match_pattern.group(3) == "":
+              if match_pattern.group(4) == " " or match_pattern.group(4) == "":
                 reg_remove = view.find("(\*|\-|\>|\+|[0-9]+\.)(.*)",point_last_row-1)
                 edit = view.begin_edit()
                 view.erase(edit,reg_remove)
@@ -90,7 +90,7 @@ class Bullet(sublime_plugin.EventListener):
                   match_number = re.search("[0-9]+",match_pattern.group(2))
                   if match_number != None:
                     last_number = int(match_number.group(0))
-                    insertion = str(last_number+1) + ". "
+                    insertion = str(last_number+1) + match_pattern.group(3) + " "
                   else:
                     insertion = ""
                 edit = view.begin_edit()
@@ -103,9 +103,9 @@ class Bullet(sublime_plugin.EventListener):
         if (row - Bullet.last_line == 1):
           previous_line = view.substr(view.line(Bullet.last_pos))
           if row != 0 and previous_line != "":
-            match_pattern = re.search(u"^( *|\t*)(\*|\-|\+|•|⁃|‣|#.|[0-9]+\.)(.*)",previous_line)
+            match_pattern = re.search(u"^( *|\t*)(\*|\-|\+|•|⁃|‣|#.|[0-9]+(\.))(.*)",previous_line)
             if match_pattern != None:
-              if match_pattern.group(3) == " " or match_pattern.group(3) == "":
+              if match_pattern.group(4) == " " or match_pattern.group(4) == "":
                 reg_remove = view.find(u"(\*|\-|\+|•|⁃|‣|#.|[0-9]+\.)(.*)",point_last_row-1)
                 edit = view.begin_edit()
                 view.erase(edit,reg_remove)
@@ -129,7 +129,7 @@ class Bullet(sublime_plugin.EventListener):
                   match_number = re.search("[0-9]+",match_pattern.group(2))
                   if match_number != None:
                     last_number = int(match_number.group(0))
-                    insertion = str(last_number+1) + ". "
+                    insertion = str(last_number+1) + match_pattern.group(3) + " "
                   else:
                     insertion = ""
                 edit = view.begin_edit()

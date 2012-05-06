@@ -1,0 +1,4 @@
+SublimeMarkdown 0.3.1
+
+Changelog
+  - Fixed: Hit return on an empty bullet will delete the bullet
